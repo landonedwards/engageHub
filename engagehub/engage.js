@@ -201,7 +201,7 @@ function updateHeader(characterId, classId) {
 
     if (builderMode.value == "on" && characterId && classId) {
         headerRow.innerHTML = `
-            <th></th>
+            <th class="signHeader"></th>
             <th>Name</th>
             <th>HP</th>
             <th>STR</th>
@@ -395,59 +395,6 @@ function displayWeaponIcon() {
 }
 }
 
-// WORK IN PROGRESS - Adding plus and minus when builder mode is on
-
-// function changeMode() {
-//     let mode = builderMode.value;
-
-//     // begin reused code. try to find a way to put this in a function or avoid copy pasting it
-//     const characterId = document.querySelector("#charSelect").value;
-//     const classId = document.querySelector("#classSelect").value;
-
-//     let char;
-//     if (characterId) {
-//         char = characters.find(c => c.id == characterId);
-//     }
-//     else {
-//         char = null;
-//     }
-
-//     let charClass;
-//     if (classId) {
-//         charClass = classes.find(c => c.id == classId);
-//     }
-//     else {
-//         charClass = null;
-//     }
-//     // end of reused code
-
-//     if (mode == "On") {
-//         if (char && charClass) {
-
-//         }
-//     }
-
-//     else {
-//         // document.body.classList.remove("dark");
-//         // logo.setAttribute("src", "byui-logo_blue.webp");
-//     }
-// }
-
-// builderMode.addEventListener("change", changeMode);
-
-
-
-// WORK IN PROGRESS... Plus sign by default; once clicked, change it to minus sign and add unit and class to team page
-function teamBuilder() {
-    const img = document.createElement("img");
-
-            img.src = "plus.png";
-            img.alt = "plus-sign";
-
-}
-
-
-
 populateCharacterDropdown();
 populateClassDropdown();
 displayWeaponIcon();
@@ -555,3 +502,41 @@ if (searchBox) {
     displayAllCharacters();
     searchBox.addEventListener("input", filterCharacters);
 }
+
+
+// code for team manager page
+
+// WORK IN PROGRESS
+
+// function displayTeam() {
+//     const teamTableBody = document.querySelector(".teamTableBody");
+//         teamTableBody.innerHTML = "";
+    
+//         team.forEach(member => {
+//             const char = characters.find(c => c.id == member.charId);
+//             const charClass = classes.find(c => c.id == member.classId);
+
+//             const row = document.createElement("tr");
+            
+//             const img = document.createElement("img");
+//             img.src = char.image;
+//             img.alt = char.charName;
+
+//             row.classList.add("searchRow");
+//             row.innerHTML = `
+//             <td class="charSprite"></td>
+//             <td class="nameColumn">${char.charName}</td>
+//             <td>${char.HP}</td>
+//             <td>${char.Str}</td>
+//             <td>${char.Mag}</td>
+//             <td>${char.Dex}</td>
+//             <td>${char.Spd}</td>
+//             <td>${char.Def}</td>
+//             <td>${char.Res}</td>
+//             <td>${char.Lck}</td>
+//             <td>${char.Bld}</td>
+//             `;
+
+//             row.cells[0].appendChild(img);
+//             resultsTable.appendChild(row);
+// })}

@@ -267,8 +267,8 @@ details {
     cursor: pointer;
 }
 
-.signIcon:hover {
-    width: 45px;
+.signHeader {
+    background-color: transparent;
 }
 
 @media screen and (min-width: 650px) {
@@ -309,10 +309,6 @@ details {
 
     .signIcon {
         width: 40px;
-    }
-
-    .signIcon:hover {
-        width: 50px;
     }
 
     details {
